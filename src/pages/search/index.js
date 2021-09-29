@@ -22,29 +22,33 @@ export function Search() {
         
         <main className={css.searchPage}>
 
+            <Link href={`/`}>
+                <a className={css.btnRetour}>Retour à l'acueil</a>
+            </Link>
+
             <div className={css.headerSearch}>
                 <h1>Rick and Morty Search</h1>
                 <form onSubmit={handleOnSubmitSearch}>
-                    <input ref={search} type="text"/>
-                    <select ref={select}>
-                        <option value="character">Personnage</option>
-                        <option value="location">Location</option>
-                        <option value="episode">Episode</option>
-                    </select>
+                    <div>
+                        <input ref={search} type="text"/><br/>
+                        <select ref={select}>
+                            <option value="character">Personnage</option>
+                            <option value="location">Location</option>
+                            <option value="episode">Episode</option>
+                        </select>
+                        
+                    </div>
                     <button>Search</button>
                 </form> 
-                <Link href={`/`}>
-                    <a>Retour à l'acueil</a>
-                </Link>
             </div>
 
             <div className={css.searchList}>
                 {items?.map((p) => ( // map retourne une valeur
-                    <Link href={`/`}>
+                    <Link href={`./${p.url.match(/(character)|(location)|(episode)/)[0]}/${p.id}`}>
                         <a>
                             <div></div>
                             <span>{p.name}</span><br/> 
-                            <img src={p.image} />
+                            <img /* src={p.image} *//>
                         </a>
                     </Link>
                 ))}

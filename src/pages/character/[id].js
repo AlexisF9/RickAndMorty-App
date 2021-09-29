@@ -53,7 +53,7 @@ export function Perso({persoInfo = {}, episodeName}) {
                     {episodeName?.results.map((ep) => (
                         <ul key={ep.id}>
                             <li>
-                                <Link href={`/episodes/${ep.id}`}>
+                                <Link href={`/episode/${ep.id}`}>
                                     <a className={css.lienEp}>
                                         {ep.name} ({ep.episode})<br/>
                                     </a>

@@ -17,7 +17,7 @@ export function Location({locationInfo, characters}) {
             <h3>Résidents :</h3>
             <div className={css.listOfChara}>
                 {characters?.map(({name, id, image}) => ( // map retourne une valeur
-                    <Link href={`/personnage/${id}`}>
+                    <Link href={`/character/${id}`}>
                         <a key={id}>
                             <div></div>
                             <span>{name}</span>

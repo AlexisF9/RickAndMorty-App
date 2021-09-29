@@ -1,5 +1,17 @@
 .searchPage {
 
+    .btnRetour {
+        color: black;
+        transition: color 0.4s;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+
+       &:hover {
+            color: rgb(255, 152, 0);
+        }
+    }
+
     .headerSearch {
         background-color: white;
         color: black;
@@ -14,28 +26,35 @@
 
         form {
             margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+            input, select, button {
+                padding: 0.5rem;
+                border-radius: 5px;
+                outline: 0;
+            }
+
+            input, select {
+                border: 0;
+            }
 
             input {
-                padding: 0.5rem;
-                border: 0;
                 background-color: #383838;
                 color: white;
-                border-radius: 5px;
             }
 
             button {
-                border: 0;
+                border: 1px solid #383838;
                 background: transparent;
                 cursor: pointer;
-            }
-        }
+                margin-left: 1rem;
+                transition: background-color 0.4s;
 
-        a {
-            color: black;
-            transition: color 0.4s;
-
-            &:hover {
-                color: rgb(255, 152, 0);
+                &:hover {
+                    background-color: rgb(255, 152, 0);
+                }
             }
         }
     }

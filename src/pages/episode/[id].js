@@ -16,7 +16,7 @@ export function Episode({episodeInfo, characters}) {
             
             <div className={css.listOfPerso}>
                 {characters?.map(({name, id, image}) => ( // map retourne une valeur
-                    <Link href={`/personnage/${id}`}>
+                    <Link href={`/character/${id}`}>
                         <a key={id}>
                             <div></div>
                             <span>{name}</span>

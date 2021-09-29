@@ -1,0 +1,42 @@
+.component {
+
+    h1 {
+        text-align: center;
+    }
+
+    .personnage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+
+        div {
+            transition: transform 0.4s;
+            text-align: center;
+
+            &:hover {
+                transform: scale(0.95);
+            }
+
+            a {
+                text-transform: uppercase;
+
+                h2 {
+                    font-size: 20px;
+                    margin: 2rem 0 0 0;
+                }
+            }
+        
+        }
+
+        
+    }
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}

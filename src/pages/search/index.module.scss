@@ -1,0 +1,86 @@
+.searchPage {
+
+    .headerSearch {
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 2rem 0 2rem 0;
+        margin-bottom: 3rem;
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        form {
+            margin-bottom: 2rem;
+
+            input {
+                padding: 0.5rem;
+                border: 0;
+                background-color: #383838;
+                color: white;
+                border-radius: 5px;
+            }
+
+            button {
+                border: 0;
+                background: transparent;
+                cursor: pointer;
+            }
+        }
+
+        a {
+            color: black;
+            transition: color 0.4s;
+
+            &:hover {
+                color: rgb(255, 152, 0);
+            }
+        }
+    }
+
+    .searchPerso {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+    
+        a {
+            position: relative;
+            text-transform: uppercase;
+            margin: 0.5rem;
+            
+            &:hover {
+                div, span {
+                    opacity: 0;
+                }
+            }
+    
+            div, span {
+                transition: opacity 0.4s;
+                position: absolute;
+            }
+            
+            div {
+                background-color: rgba(53, 53, 53, 0.479);
+                border-radius: 9px;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 3px;
+            }
+    
+            span {
+                color: rgb(255, 152, 0);
+                padding: 0.5rem;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 5px;
+            }
+        }
+    }
+}
+

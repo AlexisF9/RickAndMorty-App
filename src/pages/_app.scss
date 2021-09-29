@@ -1,0 +1,27 @@
+// Fonts
+// @font-face {
+// 	font-family: 'Regular';
+// 	src: url("/fonts/regular.woff") format("woff"),
+//         url('/fonts/regular.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// 	font-display: swap;
+// }
+
+// App
+body, html {
+    font-family: 'Regular', Helvetica, Arial, sans-serif;
+    background-color: rgb(56, 56, 56);
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    border-radius: 0.5rem;
+}

@@ -1,0 +1,47 @@
+.component {
+
+    h1 {
+        text-align: center;
+        margin: 5rem 0 5rem 0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-evenly;
+
+        .presentationContent {
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+    
+            .presentation {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                color: black;
+                width: fit-content;
+                padding: 2rem;
+                border-radius: 9px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: rgb(231, 231, 231);
+                }
+                
+        
+                div:last-child {
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+    
+    .lien, .lienEp {
+        text-decoration: underline;
+        color: rgb(255, 152, 0);
+    }
+}
+

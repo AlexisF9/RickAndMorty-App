@@ -6,12 +6,14 @@ export function Search() {
 
     const [items, setItems] = useState([]) 
     const search = createRef()
+    const select = createRef()
 
     async function handleOnSubmitSearch(e) {
         
         e.preventDefault(); // annule tout ce que tu fais nativement, dans ce cas : annule le rechargement de page
-        const value = search.current.value      
-        const rep = await fetch(`https://rickandmortyapi.com/api/character/?name=${value}`)
+        const value = search.current.value
+        const categorie = select.current.value      
+        const rep = await fetch(`https://rickandmortyapi.com/api/${categorie}/?name=${value}`)
         const data = await rep.json()
         setItems(data.results)
       }
@@ -24,6 +26,11 @@ export function Search() {
                 <h1>Rick and Morty Search</h1>
                 <form onSubmit={handleOnSubmitSearch}>
                     <input ref={search} type="text"/>
+                    <select ref={select}>
+                        <option value="character">Personnage</option>
+                        <option value="location">Location</option>
+                        <option value="episode">Episode</option>
+                    </select>
                     <button>Search</button>
                 </form> 
                 <Link href={`/`}>
@@ -31,12 +38,12 @@ export function Search() {
                 </Link>
             </div>
 
-            <div className={css.searchPerso}>
+            <div className={css.searchList}>
                 {items?.map((p) => ( // map retourne une valeur
                     <Link href={`/`}>
                         <a>
                             <div></div>
-                            <span>{p.name}</span> 
+                            <span>{p.name}</span><br/> 
                             <img src={p.image} />
                         </a>
                     </Link>

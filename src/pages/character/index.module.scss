@@ -43,5 +43,17 @@
         text-decoration: underline;
         color: rgb(255, 152, 0);
     }
+
+    .retour {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: white;
+        transition: color 0.4s;
+        
+        &:hover {
+            color: rgb(255, 152, 0);
+        }
+    }
 }
 

@@ -2,12 +2,13 @@ import Link from 'next/link'
 import css from './index.module.scss'
 
 export function Perso({persoInfo = {}, episodeName}) {
+
     return (
         
         <main className={css.component}>
 
             <Link href={`/`}>
-                <a className={css.lien}>
+                <a className={css.retour}>
                     Retour
                 </a>
             </Link>
@@ -24,7 +25,7 @@ export function Perso({persoInfo = {}, episodeName}) {
                             <p>ID : {persoInfo.id}</p>
                             <p>Race : {persoInfo.species}</p>
                             <p>Gender : {persoInfo.gender}</p>
-                            <p>Status : <span style={{ color: persoInfo.status === 'Alive' ? 'green' : 'red'}}>{persoInfo.status}</span></p>
+                            <p>Status : <span style={{ color: persoInfo.status === 'Alive' ? 'green' : persoInfo.status === 'Dead' ? 'red' : 'black'}}>{persoInfo.status}</span></p>
                             <p>
                                 {persoInfo?.origin?.url && (// Si l'url existe j'execute le code
                                     <>

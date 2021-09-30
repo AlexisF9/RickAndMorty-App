@@ -5,6 +5,13 @@ import Pagination from 'components/pagination'
 import Header from 'components/header'
  
 export default function Home({personnage}) {
+
+    const status = (status) => {
+        if (status === 'Alive') return 'green';
+        else if (status === 'Dead') return 'red'
+        else return 'black'
+    }
+
     return (
         
         <main className={css.component}>
@@ -18,7 +25,7 @@ export default function Home({personnage}) {
 
                             <Link href={`/character/${nomPerso.id}`}>
 
-                                <a style={{ color: nomPerso.status === 'Alive' ? 'green' : 'red'}}>
+                                <a style={{ color: status(nomPerso.status) }}>
 
                                     <h2>{nomPerso.name}</h2><br/>
                                     <img src={nomPerso.image}/><br/><br/>

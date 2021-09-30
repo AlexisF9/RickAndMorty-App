@@ -59,6 +59,18 @@
         }
     }
 
+    .searchList {
+        text-align: center;
+
+        a {
+            transition: color 0.4s;
+            
+            &:hover {
+                color: rgb(255, 152, 0);
+            }
+        }
+    }
+
     /*.searchList {
         display: flex;
         flex-wrap: wrap;

@@ -1,7 +1,21 @@
 .localisation {
 
-    h3 {
+    .btnReturn {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        transition: color 0.4s;
+    
+        &:hover {
+            color: rgb(255, 152, 0);
+        }
+    }
+
+    h1, h3, span {
         text-align: center;
+    }
+
+    h3 {
         text-transform: uppercase;
     }
     
@@ -39,7 +53,6 @@
             span {
                 color: rgb(255, 152, 0);
                 padding: 0.5rem;
-                text-align: center;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);

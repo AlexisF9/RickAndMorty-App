@@ -7,13 +7,15 @@ export function Episode({episodeInfo, characters}) {
         <main>
 
             <Link href={`/`}>
-                <a onClick={() => window.history.back()}>
+                <a className={css.btnRetour} onClick={() => window.history.back()}>
                     Retour
                 </a>
             </Link>
-            <h1>{episodeInfo.name}</h1>
-            <p>Date de diffusion : {episodeInfo.air_date}</p>
-            
+
+            <div className={css.epHeader}>
+                <h1>{episodeInfo.name}</h1>
+                <p>Date de diffusion : {episodeInfo.air_date}</p>
+            </div>
             <div className={css.listOfPerso}>
                 {characters?.map(({name, id, image}) => ( // map retourne une valeur
                     <Link href={`/character/${id}`}>
@@ -52,13 +54,10 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() { // liste les (routes) pages à l'avance
-    const ep = await (await fetch('https://rickandmortyapi.com/api/episode')).json()
 
     return {
-        paths: ep.results.map(e => ({
-            params: {id: e.id.toString()}
-        })),
-        fallback: false, // met la page 404
+        paths: [],
+        fallback: 'blocking', // met la page 404
     }
     
 }

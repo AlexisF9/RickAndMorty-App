@@ -5,15 +5,17 @@ export function Location({locationInfo, characters}) {
     return (
         <main className={css.localisation}>
             <Link href={`/`}>
-                <a onClick={() => window.history.back()}>
+                <a className={css.btnReturn} onClick={() => window.history.back()}>
                     Retour
                 </a>
             </Link>
+            
             <h1>{locationInfo.name}</h1>
             <ul>
                 <li>Type : {locationInfo.type}</li>
                 <li>dimension : {locationInfo.dimension}</li>
             </ul>
+            
             <h3>Résidents :</h3>
             <div className={css.listOfChara}>
                 {characters?.map(({name, id, image}) => ( // map retourne une valeur
@@ -56,14 +58,11 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() { // liste les (routes) pages à l'avance
-    const loc = await (await fetch('https://rickandmortyapi.com/api/location')).json()
 
     return {
-        paths: loc.results.map(l => ({
-            params: {id: l.id.toString()}
-        })),
-        fallback: false, // met la page 404
-    }
+        paths: [],
+        fallback: 'blocking', // met la page 404
+    } // genere les pages à la volé 
     
 }
 

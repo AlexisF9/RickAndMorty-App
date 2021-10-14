@@ -1,4 +1,5 @@
-import './_app.scss'
+import App from 'next/app'
+import css from './_app.scss'
 
 function ProjectApp({ Component, pageProps }) {
     return <Component {...pageProps} />

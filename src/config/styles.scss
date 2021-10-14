@@ -1,0 +1,189 @@
+// Responsive
+@mixin smallMobile() { @media screen and (max-width:325px) { @content; } } // @include mobile { }
+@mixin mobile() { @media screen and (max-width:767px) { @content; } } // @include mobile { }
+@mixin desktop() { @media screen and (min-width:768px) { @content; } } // @include desktop { }
+@mixin tablet() { @media screen and (max-width:1024px) { @content; } } // @include tablet { }
+@mixin onlyTablet() { @media screen and (min-width: 768px) and (max-width:1024px) { @content; } } // @include tablet { }
+@mixin onlyDesktop() { @media screen and (min-width:1025px) { @content; } } // @include desktop { }
+@mixin largeDesktop() { @media screen and (min-width:1400px) { @content; } }
+
+// Size
+$maxPageWidth: 1920px;
+$blockWidth: 80vw;
+
+@mixin positionBlock {
+    width: $blockWidth;
+    max-width: $maxPageWidth;
+    margin: 100px auto;
+
+    @include mobile {
+        width: 100vw;
+    }
+}
+
+@mixin articleBlock {
+  max-width: 80%;
+  margin: auto;
+
+  @include mobile {
+      max-width: 90%;  
+  }
+
+    @media screen and (min-width: 767px) and (max-width: 900px) {
+        max-width: 600px;
+    }
+}
+
+@mixin linkHover {
+    > a {
+        text-decoration: underline;
+        cursor: pointer;
+        text-decoration-line: none;
+        color: inherit;
+        background-repeat: no-repeat;
+        background-size: 100% 0.4em;
+        background-position: 0 100%;
+        transition: background-size 0.25s ease-in;
+    }
+    
+    > a:hover {
+        background-size: 100% 100%;
+    }
+}
+
+@mixin SmallBlock {
+    width: 75%;
+    margin-left: 15%;
+    margin-right: 10%;
+
+    @include mobile {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@mixin LargeBlock {
+    width: 100%;
+}
+
+// FONT-SIZES
+
+$title: 35px;
+$subtitle: 35px;
+$titleMobile: 20px;
+$subtitleMobile: 12px;
+$subsubtitle: 21px;
+$line-height: 28px;
+$h1FS: 36px;
+$h1FSm: 24px;
+$h1FSs: 20px;
+$pFS: 16px;
+$pFSmobile: 14px;
+
+// FONT-SIZES BLOG
+
+// Desktop font-sizes
+
+$desktopH1: 45px;
+$desktopH2: 35px;
+$desktopH3: 30px;
+
+$desktopTextS: 16px;
+$desktopTextM: 18px;
+$desktopTextL: 20px;
+
+// Mobile font-sizes
+
+$mobileH1: 32px;
+$mobileH2: 28px;
+$mobileH3: 24px;
+
+$mobileTextS: 14px;
+$mobileTextM: 16px;
+$mobileTextL: 18px;
+
+// POSITIONNING
+
+$desktopMarginbottom: 30px;
+
+// COLORS
+
+$blue: #04336a;
+$lightBlue: #0E5FAD;
+$darkBlue: #002C5F;
+$greyBlue: #454D66;
+$blogBlue: #0055A3;
+$flashBlue: #166BC4;
+$greyBackground: #EBEBEB;
+$text-disabled: rgb(128, 144, 185);
+
+// Block interview pictograms colors
+
+$colorsInterview: (
+    green: #3A9A8D,
+    purple: #6B7CB6,
+    orange: #DD9E20,
+);
+
+// THEMES (couleurs des axes de performance)
+
+$themes: (
+    green: (
+        background: #0A7367,
+        foreground: #3A998D,
+        figureText: #3A998D,
+        backgroundSecondary: #A9C59F,
+        keyFigureText: #003930,
+        svgColor: invert(50%) sepia(13%) saturate(1524%) hue-rotate(123deg) brightness(100%) contrast(98%),
+        textPromotionAxe: #027066,
+        borderPromotionAxe: #3A9A8D,
+        backgroundPromotionAxe: #EDF4EC,
+    ),
+    pink: (
+        background: #833C38,
+        foreground: #CA5A59,
+        figureText: #CA6060,
+        backgroundSecondary: #EBB8B7,
+        keyFigureText: #471815,
+        svgColor: invert(43%) sepia(20%) saturate(1246%) hue-rotate(314deg) brightness(102%) contrast(105%),
+        textPromotionAxe: #893C35,
+        borderPromotionAxe: #CA6060,
+        backgroundPromotionAxe: #F9ECEC,
+    ),
+    yellow: (
+        background: #976D44,
+        foreground: #DB962C,
+        figureText: #D79538,
+        backgroundSecondary: #F3E7B8,
+        keyFigureText: #432D11,
+        svgColor: invert(78%) sepia(21%) saturate(2677%) hue-rotate(338deg) brightness(90%) contrast(89%),
+        textPromotionAxe: #A07241,
+        borderPromotionAxe: #DB972C,
+        backgroundPromotionAxe: #FCFAF1,
+    ),
+    blue: (
+        background: #444D6C,
+        foreground: #6C7BB7,
+        figureText: #677BB6,
+        backgroundSecondary: #BED3DB,
+        keyFigureText: #172030,
+        svgColor: invert(50%) sepia(6%) saturate(3443%) hue-rotate(191deg) brightness(95%) contrast(85%),
+        textPromotionAxe: #464A6C,
+        borderPromotionAxe: #6B7CB6,
+        backgroundPromotionAxe: #F1F6F7,
+    )
+);
+
+$imgFloats: (
+    right: (
+        float: right,
+        margin-left: 60px,
+        margin-right: 0px,
+    ),
+    left: (
+        float: left,
+        margin-left: 0px,
+        margin-right: 60px,
+    )
+);

@@ -1,7 +1,12 @@
 {
   "/_app": "pages/_app.js",
+  "/character/[id]": "pages/character/[id].js",
+  "/episode/[id]": "pages/episode/[id].js",
+  "/": "pages/index.js",
+  "/location/[id]": "pages/location/[id].js",
+  "/page/[id]": "pages/page/[id].js",
+  "/search": "pages/search.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/search": "pages/search.js"
+  "/404": "pages/404.html"
 }

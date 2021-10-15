@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F","\u002Fepisode\u002F[id]","\u002Fcharacter\u002F[id]","\u002Flocation\u002F[id]","\u002Fpage\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

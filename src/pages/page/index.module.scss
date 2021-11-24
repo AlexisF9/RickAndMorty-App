@@ -15,11 +15,11 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        width: 100%;
     
         div {
             transition: transform 0.4s;
             text-align: center;
+            margin: 1rem;
     
             &:hover {
                 transform: scale(0.95);

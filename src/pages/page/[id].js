@@ -18,7 +18,7 @@ export function Page({pagination, index}) {
                     {pagination.results.map((nomPerso) => (
                         <div key={nomPerso.id}>
 
-                            <Link href={`/personnage/${nomPerso.id}`}>
+                            <Link href={`/character/${nomPerso.id}`}>
 
                                 <a style={{ color: nomPerso.status === 'Alive' ? 'green' : 'red'}}>
 
